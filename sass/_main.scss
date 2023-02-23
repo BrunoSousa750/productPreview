@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    background-color: hsl(30, 38%, 92%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    .main{
+        display: flex;
+
+
+        background-color: white;
+        height: 32rem;
+        width: 45rem;
+        border-radius: .5rem;
+
+        overflow: hidden;
+
+        &--article{
+            width: 50%;
+            height: 100%;
+
+            background-image: url("/src/images/image-product-desktop.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        &--aside{
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            width: 50%;
+            height: 100%;
+
+            padding: 1.5rem;
+            font-size: 1.5rem;
+
+            &--tag{
+                font-size: 1.4rem;
+            }
+
+            &--heading{
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            &--description{
+                font-size: 1.4rem;
+            }
+
+            &--price{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                
+                &--discounted{
+                    font-size: 2.8rem;
+                    font-family: "Fraunces", sans-serif;
+
+                    color: hsl(158, 36%, 37%);
+                }
+
+                &--previous{
+                    font-size: 1.4rem;
+                    text-decoration: line-through;
+                }
+            }
+
+            &--btn{
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+
+                background-color: hsla(158, 36%, 37%, .8);
+                color: white;
+
+                border-radius: .5rem;
+                border: none;
+
+                transition: all .25s;
+
+                margin-top: 1rem;
+                padding: 1rem;
+
+                &:hover{
+                    background-color: hsla(158, 36%, 37%, 1);
+                }
+
+                &:active{
+                    transform: scale(.9);
+                }
+            }
+
+        }
+
+    }
+}
+
+@media (max-width: 450px){
+
+    body{
+        height: 120vh;
+        overflow: scroll;
+
+        .main{
+            flex-direction: column;
+            overflow: scroll;
+
+            height: 50rem;
+            width: 36rem;
+
+            &--article{
+                height: 50%;
+                width: 100%;
+
+                background-image: url("/src/images/image-product-desktop.jpg");
+                background-size: 100%;
+                background-position: 75%;
+            }
+
+            &--aside{
+                overflow: scroll;
+
+                height: 50%;
+                width: 100%;
+            }
+        }
+    }
+}
